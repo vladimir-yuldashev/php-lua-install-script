@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # checking required packages
-for PKG in  php7.1-dev libncurses5-dev php-pear libreadline-dev make; do
+for PKG in  php7.2-dev libncurses5-dev php-pear libreadline-dev make; do
 dpkg -s "$PKG" >/dev/null 2>&1 && {
     echo "$PKG already installed. Skipping..."
 } || {
@@ -15,7 +15,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 LUA_DOWNLOAD_URL=http://www.lua.org/ftp/
 LUA_VERSION=5.3.4
 LUA_GET_URL=${LUA_DOWNLOAD_URL}lua-${LUA_VERSION}.tar.gz
-PECL_VERSION=2.0.3
+PECL_VERSION=2.0.5
 PHP_LUA_DOWNLOAD_URL=http://pecl.php.net/get/lua-${PECL_VERSION}.tgz
 PHP_VERSION=$(grep '#define PHP_API_VERSION' /usr/include/php5/main/php.h|sed 's/#define PHP_API_VERSION//' | sed 's/\s//');
 
